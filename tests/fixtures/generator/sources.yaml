@@ -1,0 +1,30 @@
+schema_version: 1
+sources:
+- id: zeta-tool
+  title: 'Pipe | star * underscore _ [brackets] <angle> #hash `tick`'
+  url: https://example.org/old
+  final_url: https://example.org/new
+  page_title: Title with & and | characters
+  http_status: 301
+  final_http_status: 200
+  type: tool
+  cost: unknown
+  difficulty: beginner
+  why_included: Used only to test Markdown escaping and redirect rendering in the generator.
+  prerequisites: []
+  est_hours: unknown
+  verified_on: '2025-01-15'
+- id: alpha-ref
+  title: Plain title
+  url: https://example.org/alpha
+  final_url: https://example.org/alpha
+  page_title: Plain
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: Used only to test that entries are sorted by ID in the generated file.
+  prerequisites: [Some prerequisite]
+  est_hours: 2
+  verified_on: '2025-01-15'

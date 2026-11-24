@@ -1,0 +1,71 @@
+# Pull-request checks. Read-only by design.
+#
+# Uses the `pull_request` event (never `pull_request_target`), so pull requests from forks
+# run with a read-only token and no repository secrets. Every job is limited to
+# `contents: read`, and checkout does not persist credentials.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # actions/checkout v7.0.1
+        with:
+          persist-credentials: false
+      - uses: DavidAnson/markdownlint-cli2-action@3ce8f712b5d8f31acd8e201be6d97e3d2bb23eb7 # DavidAnson/markdownlint-cli2-action v25.1.0
+        with:
+          globs: "**/*.md"
+
+  offline-checks:
+    name: Validator, generator, and tests (offline)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # actions/checkout v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # actions/setup-python v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Install pinned check dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Validate sources
+        run: make validate
+      - name: SOURCES.md matches the generator output
+        run: make sources-check
+      - name: Unit tests
+        run: make test
+      - name: Stale-source report (informational)
+        run: make stale
+
+  link-check:
+    name: Link check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # actions/checkout v7.0.1
+        with:
+          persist-credentials: false
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # lycheeverse/lychee-action v2.9.0
+        with:
+          args: --config lychee.toml --no-progress "./**/*.md"
+          fail: true
+          # The default read-only GITHUB_TOKEN is used only to reduce GitHub rate limiting.
+          token: ${{ github.token }}

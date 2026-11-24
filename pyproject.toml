@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "security-roadmap"
+version = "0.1.0"
+description = "A phased, ethical security learning path with a small local progress tracker."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+# Needed only for the repository checks (validator and generator), not for the CLI.
+dev = ["PyYAML==6.0.3", "jsonschema==4.26.0"]
+
+[project.scripts]
+roadmap = "roadmap.cli:main"
+
+[tool.setuptools]
+packages = ["roadmap"]

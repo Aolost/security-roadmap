@@ -1,0 +1,30 @@
+schema_version: 1
+sources:
+- id: fixture-alpha
+  title: Example resource fixture-alpha
+  url: https://example.org/alpha
+  final_url: https://example.org/alpha
+  page_title: Example page
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: Used only as a validator test fixture, not a real roadmap resource.
+  prerequisites: []
+  est_hours: 1
+  verified_on: '2025-01-15'
+- id: fixture-beta
+  title: Example resource fixture-beta
+  url: ftp://example.org/beta
+  final_url: ftp://example.org/beta
+  page_title: Example page
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: Used only as a validator test fixture, not a real roadmap resource.
+  prerequisites: []
+  est_hours: 1
+  verified_on: '2025-01-15'

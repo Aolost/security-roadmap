@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+node_modules/
+link-report.md
+# Progress is stored in your user config directory, never here. This guards against
+# someone pointing SECURITY_ROADMAP_PROGRESS into the working tree by accident.
+progress.json

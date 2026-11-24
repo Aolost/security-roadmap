@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/security-roadmap/sources.schema.json",
+  "title": "security-roadmap resource catalog",
+  "description": "Schema for data/sources.yaml. Observed fields must come from actually opening the URL; use the string 'unknown' when a detail could not be verified.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sources"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "unknown": { "const": "unknown" },
+    "nonEmpty": { "type": "string", "minLength": 1, "pattern": "\\S" },
+    "isoDate": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "Calendar date as YYYY-MM-DD. The validator also checks that it is a real date and not in the future."
+    },
+    "httpUrl": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:",
+      "description": "Absolute URL. The validator restricts the scheme to https."
+    },
+    "httpStatus": {
+      "oneOf": [
+        { "type": "integer", "minimum": 100, "maximum": 599 },
+        { "$ref": "#/$defs/unknown" }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "title", "url", "final_url", "page_title", "http_status", "type", "cost",
+        "difficulty", "why_included", "prerequisites", "est_hours", "verified_on"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "Stable, unique, lowercase kebab-case identifier. Never reuse or rename without updating every phase document."
+        },
+        "title": { "$ref": "#/$defs/nonEmpty" },
+        "url": { "$ref": "#/$defs/httpUrl", "description": "The URL that was requested when verifying." },
+        "final_url": {
+          "description": "The destination actually observed after following redirects, or 'unknown'.",
+          "oneOf": [{ "$ref": "#/$defs/httpUrl" }, { "$ref": "#/$defs/unknown" }]
+        },
+        "page_title": {
+          "description": "The HTML <title> exactly as observed, or 'unknown'.",
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "http_status": {
+          "description": "Status of the first response to the requested URL (a 3xx value means it redirected).",
+          "$ref": "#/$defs/httpStatus"
+        },
+        "final_http_status": {
+          "description": "Status of the final response after redirects.",
+          "$ref": "#/$defs/httpStatus"
+        },
+        "type": { "enum": ["course", "lab", "book", "reference", "tool"] },
+        "cost": { "enum": ["free", "paid", "unknown"] },
+        "cost_notes": { "$ref": "#/$defs/nonEmpty" },
+        "difficulty": { "enum": ["beginner", "intermediate", "advanced"] },
+        "why_included": {
+          "type": "string",
+          "minLength": 20,
+          "pattern": "[.!?]$",
+          "description": "At least one full sentence explaining why the resource is in the roadmap."
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmpty" },
+          "description": "Editorial list of what a learner should know first. An empty list means none."
+        },
+        "est_hours": {
+          "description": "Editorial estimate of study hours, or 'unknown' when not meaningful (for example, tools).",
+          "oneOf": [
+            { "type": "integer", "minimum": 1, "maximum": 1000 },
+            { "$ref": "#/$defs/unknown" }
+          ]
+        },
+        "verified_on": { "$ref": "#/$defs/isoDate" },
+        "verified_with": { "$ref": "#/$defs/nonEmpty" },
+        "notes": { "$ref": "#/$defs/nonEmpty" },
+        "book": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["authors", "edition", "details_source"],
+          "description": "Only details confirmed on a publisher, author, or library page that was opened.",
+          "properties": {
+            "authors": {
+              "oneOf": [
+                { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmpty" } },
+                { "$ref": "#/$defs/unknown" }
+              ]
+            },
+            "edition": { "$ref": "#/$defs/nonEmpty" },
+            "details_source": { "$ref": "#/$defs/httpUrl" }
+          }
+        },
+        "certification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["prerequisites", "price", "exam_format", "checked_on"],
+          "description": "Only details confirmed on the official site; otherwise 'check the official site'.",
+          "properties": {
+            "prerequisites": { "$ref": "#/$defs/nonEmpty" },
+            "price": { "$ref": "#/$defs/nonEmpty" },
+            "exam_format": { "$ref": "#/$defs/nonEmpty" },
+            "checked_on": { "$ref": "#/$defs/isoDate" }
+          }
+        }
+      }
+    }
+  }
+}

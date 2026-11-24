@@ -1,0 +1,949 @@
+# Single source of truth for roadmap resources. Edit this file, then run `make sources`.
+# Observed fields (final_url, page_title, http_status, final_http_status, verified_on)
+# must come from actually opening the URL. Never update verified_on without rechecking.
+schema_version: 1
+sources:
+- id: automate-boring-stuff
+  title: Automate the Boring Stuff with Python (Al Sweigart)
+  url: https://automatetheboringstuff.com/
+  final_url: https://automatetheboringstuff.com/
+  page_title: Automate the Boring Stuff with Python - Automate the Boring Stuff with Python
+  http_status: 200
+  final_http_status: 200
+  type: book
+  cost: free
+  difficulty: beginner
+  why_included: A practical Python book focused on small automation scripts, which is the kind of Python most security work needs.
+  prerequisites: []
+  est_hours: 30
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  cost_notes: The page states the book is free to read under a Creative Commons licence; printed copies are sold separately.
+  book:
+    authors:
+    - Al Sweigart
+    edition: Third edition
+    details_source: https://automatetheboringstuff.com/
+- id: beej-network-programming
+  title: Beej's Guide to Network Programming
+  url: https://beej.us/guide/bgnet/
+  final_url: https://beej.us/guide/bgnet/
+  page_title: Beej's Guide to Network Programming
+  http_status: 200
+  final_http_status: 200
+  type: book
+  cost: free
+  difficulty: intermediate
+  why_included: Explains sockets and how programs actually talk over TCP and UDP, which grounds networking theory in code.
+  prerequisites:
+  - Basic C or willingness to read C examples
+  est_hours: 15
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  book:
+    authors: unknown
+    edition: unknown
+    details_source: https://beej.us/guide/bgnet/
+  notes: The author's full name was not stated on the page checked, so it is recorded as unknown.
+- id: boneh-shoup-applied-crypto
+  title: A Graduate Course in Applied Cryptography (Boneh and Shoup)
+  url: https://toc.cryptobook.us/
+  final_url: https://toc.cryptobook.us/
+  page_title: A Graduate Course in Applied Cryptography
+  http_status: 200
+  final_http_status: 200
+  type: book
+  cost: free
+  difficulty: advanced
+  why_included: A rigorous, freely downloadable textbook for learners who want the formal foundations behind the primitives they use.
+  prerequisites:
+  - Comfort with mathematical proofs
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  book:
+    authors:
+    - Dan Boneh
+    - Victor Shoup
+    edition: Version 0.6 (January 2023)
+    details_source: https://toc.cryptobook.us/
+- id: bugcrowd-vrt
+  title: Bugcrowd Vulnerability Rating Taxonomy
+  url: https://bugcrowd.com/vulnerability-rating-taxonomy
+  final_url: https://bugcrowd.com/vulnerability-rating-taxonomy
+  page_title: Bugcrowd’s Vulnerability Rating Taxonomy - Bugcrowd
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: intermediate
+  why_included: Shows how one bug-bounty platform classifies and prioritizes findings, which helps learners write realistic severity assessments.
+  prerequisites:
+  - Basic web security vocabulary
+  est_hours: 2
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: burp-community
+  title: Burp Suite Community Edition
+  url: https://portswigger.net/burp/communitydownload
+  final_url: https://portswigger.net/burp/communitydownload
+  page_title: Download Burp Suite Community Edition - PortSwigger
+  http_status: 200
+  final_http_status: 200
+  type: tool
+  cost: free
+  difficulty: beginner
+  why_included: The free edition of the intercepting proxy used throughout the Web Security Academy labs.
+  prerequisites: []
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: comptia-security-plus
+  title: CompTIA Security+
+  url: https://www.comptia.org/certifications/security
+  final_url: https://www.comptia.org/en-us/certifications/security/
+  page_title: Security+ (Plus) Certification | CompTIA
+  http_status: 301
+  final_http_status: 200
+  type: course
+  cost: unknown
+  difficulty: beginner
+  why_included: A widely recognized entry-level security certification that some employers list for junior roles.
+  prerequisites:
+  - Check the official site
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent; page text read in a browser
+  certification:
+    prerequisites: check the official site
+    price: check the official site
+    exam_format: check the official site
+    checked_on: '2026-11-25'
+  notes: On 2026-11-25 the page said Security+ V8 is the recommended version and the English V7 exam retires on June 11, 2027.
+- id: coursera-cryptography-1
+  title: Cryptography I (Coursera)
+  url: https://www.coursera.org/learn/crypto
+  final_url: https://www.coursera.org/learn/crypto
+  page_title: Cryptography I | Coursera
+  http_status: 200
+  final_http_status: 200
+  type: course
+  cost: unknown
+  difficulty: intermediate
+  why_included: A university-level course on the theory of symmetric and public-key cryptography for learners who want deeper grounding.
+  prerequisites:
+  - Basic discrete mathematics and probability
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  cost_notes: The page offered 'Join for Free' and mentioned a free trial for eligible learners; check the site for current terms.
+- id: crypto101
+  title: Crypto 101
+  url: https://www.crypto101.io/
+  final_url: https://www.crypto101.io/
+  page_title: Crypto 101
+  http_status: 200
+  final_http_status: 200
+  type: book
+  cost: free
+  difficulty: beginner
+  why_included: An introductory book on modern cryptography that focuses on how primitives are used and broken.
+  prerequisites: []
+  est_hours: 15
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  book:
+    authors:
+    - lvh
+    edition: unknown
+    details_source: https://www.crypto101.io/
+  notes: The page credits the author as 'lvh'; the full name was not stated on the page checked.
+- id: cryptopals
+  title: The Cryptopals Crypto Challenges
+  url: https://cryptopals.com/
+  final_url: https://cryptopals.com/
+  page_title: The Cryptopals Crypto Challenges
+  http_status: 200
+  final_http_status: 200
+  type: lab
+  cost: free
+  difficulty: intermediate
+  why_included: Programming challenges that teach how real cryptographic constructions fail, done entirely on your own machine.
+  prerequisites:
+  - Comfortable Python or another language
+  est_hours: 40
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: cyberchef
+  title: CyberChef
+  url: https://gchq.github.io/CyberChef/
+  final_url: https://gchq.github.io/CyberChef/
+  page_title: CyberChef
+  http_status: 200
+  final_http_status: 200
+  type: tool
+  cost: free
+  difficulty: beginner
+  why_included: A browser-based tool for encoding, decoding, and transforming data, useful in crypto exercises and CTF challenges.
+  prerequisites: []
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: disclose-io
+  title: disclose.io
+  url: https://disclose.io/
+  final_url: https://disclose.io/
+  page_title: disclose.io | Vulnerability Disclosure Standards & Tools
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: Explains vulnerability disclosure policies and safe-harbour language that researchers should look for before testing.
+  prerequisites: []
+  est_hours: 1
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: dvwa
+  title: Damn Vulnerable Web Application (DVWA)
+  url: https://github.com/digininja/DVWA
+  final_url: https://github.com/digininja/DVWA
+  page_title: 'GitHub - digininja/DVWA: Damn Vulnerable Web Application (DVWA) · GitHub'
+  http_status: 200
+  final_http_status: 200
+  type: lab
+  cost: free
+  difficulty: beginner
+  why_included: A deliberately vulnerable PHP application for local practice, with adjustable security levels that show how fixes change behaviour.
+  prerequisites:
+  - A local VM or container runtime
+  est_hours: 15
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: explainshell
+  title: explainshell.com
+  url: https://explainshell.com/
+  final_url: https://explainshell.com/
+  page_title: explainshell.com - match command-line arguments to their help text
+  http_status: 200
+  final_http_status: 200
+  type: tool
+  cost: free
+  difficulty: beginner
+  why_included: Breaks a shell command into its parts and shows the matching help text, which helps beginners read unfamiliar commands safely.
+  prerequisites: []
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: first-cvss
+  title: FIRST Common Vulnerability Scoring System (CVSS)
+  url: https://www.first.org/cvss/
+  final_url: https://www.first.org/cvss/
+  page_title: Common Vulnerability Scoring System SIG
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: intermediate
+  why_included: The standard many programs use to score vulnerability severity, which learners need for clear reports.
+  prerequisites: []
+  est_hours: 3
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: ghidra
+  title: Ghidra
+  url: https://ghidra-sre.org/
+  final_url: https://github.com/NationalSecurityAgency/ghidra
+  page_title: 'GitHub - NationalSecurityAgency/ghidra: Ghidra is a software reverse engineering (SRE) framework · GitHub'
+  http_status: 301
+  final_http_status: 200
+  type: tool
+  cost: free
+  difficulty: advanced
+  why_included: A free, open-source reverse-engineering framework used for CTF reversing challenges and for static malware analysis.
+  prerequisites:
+  - Basic C and assembly concepts
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: gnu-bash-manual
+  title: GNU Bash manual
+  url: https://www.gnu.org/software/bash/manual/
+  final_url: https://www.gnu.org/software/bash/manual/
+  page_title: GNU Bash manual - GNU Project - Free Software Foundation
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: intermediate
+  why_included: The authoritative reference for Bash syntax and behaviour, useful when scripts behave unexpectedly.
+  prerequisites:
+  - Basic shell use
+  est_hours: 5
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: hacker101
+  title: Hacker101
+  url: https://www.hacker101.com/
+  final_url: https://www.hacker101.com/
+  page_title: Home | Hacker101
+  http_status: 200
+  final_http_status: 200
+  type: course
+  cost: free
+  difficulty: beginner
+  why_included: A free web security class from HackerOne with video lessons and CTF practice aimed at future bug-bounty hunters.
+  prerequisites: []
+  est_hours: 20
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: hackerone-docs
+  title: HackerOne Help Center
+  url: https://docs.hackerone.com/
+  final_url: https://docs.hackerone.com/en/
+  page_title: Home | HackerOne Help Center
+  http_status: 302
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: Platform documentation on how bug-bounty programs, scopes, and report handling work on HackerOne.
+  prerequisites: []
+  est_hours: 2
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: hackthebox
+  title: Hack The Box
+  url: https://www.hackthebox.com/
+  final_url: https://www.hackthebox.com/
+  page_title: 'Cyber Mastery: Community Inspired. Enterprise Trusted. | Hack The Box'
+  http_status: 200
+  final_http_status: 200
+  type: lab
+  cost: unknown
+  difficulty: intermediate
+  why_included: A legal platform of intentionally vulnerable machines and challenges for practising offensive skills against in-scope targets.
+  prerequisites:
+  - Linux, networking, and web fundamentals
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  cost_notes: Free and paid tiers were not confirmed on the page checked; check the site.
+- id: htb-academy
+  title: HTB Academy
+  url: https://academy.hackthebox.com/
+  final_url: https://academy.hackthebox.com/
+  page_title: Best Online Cybersecurity Courses & Certifications | HTB Academy
+  http_status: 200
+  final_http_status: 200
+  type: course
+  cost: unknown
+  difficulty: intermediate
+  why_included: Structured modules from Hack The Box that pair explanations with lab exercises and lead to HTB certifications.
+  prerequisites:
+  - Phase 1 foundations
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  cost_notes: The page offered 'Start for Free' and also listed paid certifications; check the site for current pricing.
+- id: isc2-cc
+  title: ISC2 Certified in Cybersecurity (CC)
+  url: https://www.isc2.org/certifications/cc
+  final_url: https://www.isc2.org/certifications/cc
+  page_title: CC Certified in Cybersecurity Certification | ISC2
+  http_status: 200
+  final_http_status: 200
+  type: course
+  cost: unknown
+  difficulty: beginner
+  why_included: An entry-level certification from ISC2 aimed at people starting a security career without prior experience.
+  prerequisites:
+  - No experience required (per the official page)
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent; page text read in a browser
+  certification:
+    prerequisites: The official page said no experience is needed.
+    price: check the official site
+    exam_format: check the official site
+    checked_on: '2026-11-25'
+- id: mdn-http
+  title: 'MDN: HTTP'
+  url: https://developer.mozilla.org/en-US/docs/Web/HTTP
+  final_url: https://developer.mozilla.org/en-US/docs/Web/HTTP
+  page_title: 'HTTP: Hypertext Transfer Protocol | MDN'
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: A clear reference for HTTP methods, headers, status codes, and cookies, which every web security topic builds on.
+  prerequisites: []
+  est_hours: 8
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: mitre-attack
+  title: MITRE ATT&CK
+  url: https://attack.mitre.org/
+  final_url: https://attack.mitre.org/
+  page_title: MITRE ATT&CK®
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: intermediate
+  why_included: A shared vocabulary of adversary techniques that defenders use to map detections and write clear reports.
+  prerequisites: []
+  est_hours: 8
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: nist-csf
+  title: NIST Cybersecurity Framework
+  url: https://www.nist.gov/cyberframework
+  final_url: https://www.nist.gov/cyberframework
+  page_title: Cybersecurity Framework | NIST
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: A widely referenced framework for organizing security programs, useful context for defensive and governance roles.
+  prerequisites: []
+  est_hours: 4
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: nist-sp-800-61r3
+  title: 'NIST SP 800-61 Rev. 3: Incident Response Recommendations'
+  url: https://csrc.nist.gov/pubs/sp/800/61/r3/final
+  final_url: https://csrc.nist.gov/pubs/sp/800/61/r3/final
+  page_title: 'SP 800-61 Rev. 3, Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile | CSRC'
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: intermediate
+  why_included: NIST's current incident-response guidance, which gives structure to the incident-handling exercises in this phase.
+  prerequisites:
+  - NIST Cybersecurity Framework overview
+  est_hours: 6
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: nmap-book
+  title: Nmap Network Scanning (Gordon Lyon)
+  url: https://nmap.org/book/
+  final_url: https://nmap.org/book/
+  page_title: Nmap Network Scanning—The Official Nmap Project Guide to Network Discovery and Security Scanning
+  http_status: 200
+  final_http_status: 200
+  type: book
+  cost: paid
+  difficulty: intermediate
+  why_included: The official guide to Nmap from its original author, used to understand scanning before using it in legal labs.
+  prerequisites:
+  - TCP/IP basics
+  est_hours: 20
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  cost_notes: The page lists a suggested retail price for the printed book; check the site for which parts are readable online.
+  book:
+    authors:
+    - Gordon “Fyodor” Lyon
+    edition: unknown
+    details_source: https://nmap.org/book/
+- id: offsec-pen-200
+  title: OffSec PEN-200 and OSCP+
+  url: https://www.offsec.com/courses/pen-200/
+  final_url: https://www.offsec.com/courses/pen-200/
+  page_title: Get your OSCP+ certification with PEN-200 | OffSec
+  http_status: 200
+  final_http_status: 200
+  type: course
+  cost: paid
+  difficulty: advanced
+  why_included: A well-known hands-on penetration-testing course and proctored exam for learners heading toward offensive roles.
+  prerequisites:
+  - TCP/IP networking
+  - Windows and Linux administration
+  - Basic scripting
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  certification:
+    prerequisites: No formal prerequisites; the official page strongly recommends TCP/IP networking knowledge and Windows and Linux administration experience.
+    price: The official page listed an OSCP+ standalone exam attempt at $1,699 on the check date; bundles and promotions vary, so check the official site.
+    exam_format: The official page described a 24-hour proctored exam.
+    checked_on: '2026-11-25'
+- id: otw-bandit
+  title: 'OverTheWire: Bandit'
+  url: https://overthewire.org/wargames/bandit/
+  final_url: https://overthewire.org/wargames/bandit/
+  page_title: 'OverTheWire: Bandit'
+  http_status: 200
+  final_http_status: 200
+  type: lab
+  cost: free
+  difficulty: beginner
+  why_included: A legal, beginner-friendly wargame that teaches Linux command-line skills one level at a time.
+  prerequisites:
+  - An SSH client
+  est_hours: 20
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: otw-natas
+  title: 'OverTheWire: Natas'
+  url: https://overthewire.org/wargames/natas/
+  final_url: https://overthewire.org/wargames/natas/
+  page_title: 'OverTheWire: Natas'
+  http_status: 200
+  final_http_status: 200
+  type: lab
+  cost: free
+  difficulty: beginner
+  why_included: A legal wargame that teaches server-side web security basics through short levels.
+  prerequisites:
+  - HTTP basics
+  est_hours: 15
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: otw-wargames
+  title: 'OverTheWire: Wargames'
+  url: https://overthewire.org/wargames/
+  final_url: https://overthewire.org/wargames/
+  page_title: 'OverTheWire: Wargames'
+  http_status: 200
+  final_http_status: 200
+  type: lab
+  cost: free
+  difficulty: intermediate
+  why_included: The index of OverTheWire wargames, from which learners can continue past Bandit and Natas into harder legal challenges.
+  prerequisites:
+  - OverTheWire Bandit
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: owasp-cheat-sheets
+  title: OWASP Cheat Sheet Series
+  url: https://cheatsheetseries.owasp.org/
+  final_url: https://cheatsheetseries.owasp.org/
+  page_title: Introduction - OWASP Cheat Sheet Series
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: intermediate
+  why_included: Concise defensive guidance on specific topics, which helps learners explain how to fix what they find.
+  prerequisites: []
+  est_hours: 6
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: owasp-juice-shop
+  title: OWASP Juice Shop
+  url: https://owasp.org/www-project-juice-shop/
+  final_url: https://owasp.org/projects/juice-shop
+  page_title: OWASP Juice Shop - Insecure Web Application for Security Training | OWASP Foundation
+  http_status: 308
+  final_http_status: 200
+  type: lab
+  cost: free
+  difficulty: beginner
+  why_included: An intentionally insecure web application that learners can run locally to practise finding common web vulnerabilities.
+  prerequisites:
+  - Docker or Node.js to run it locally
+  est_hours: 30
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: owasp-password-storage-cheatsheet
+  title: OWASP Password Storage Cheat Sheet
+  url: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
+  final_url: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
+  page_title: Password Storage - OWASP Cheat Sheet Series
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: Explains how passwords should be hashed and stored, connecting cryptography theory to everyday application security.
+  prerequisites: []
+  est_hours: 2
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: owasp-top-ten
+  title: OWASP Top 10
+  url: https://owasp.org/www-project-top-ten/
+  final_url: https://owasp.org/projects/top-ten
+  page_title: OWASP Foundation
+  http_status: 308
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: A widely used awareness document that names the most common categories of web application risk.
+  prerequisites: []
+  est_hours: 4
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: owasp-vuln-disclosure-cheatsheet
+  title: OWASP Vulnerability Disclosure Cheat Sheet
+  url: https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html
+  final_url: https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html
+  page_title: Vulnerability Disclosure - OWASP Cheat Sheet Series
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: Gives practical guidance for researchers and organizations on reporting and receiving vulnerabilities responsibly.
+  prerequisites: []
+  est_hours: 1
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: owasp-wstg
+  title: OWASP Web Security Testing Guide
+  url: https://owasp.org/www-project-web-security-testing-guide/
+  final_url: https://owasp.org/projects/web-security-testing-guide
+  page_title: Web Security Testing Guide | OWASP Foundation
+  http_status: 308
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: intermediate
+  why_included: A methodology reference for structuring web application testing, useful once individual bug classes are understood.
+  prerequisites:
+  - Web security fundamentals
+  est_hours: 10
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: owasp-zap
+  title: ZAP (Zed Attack Proxy)
+  url: https://owasp.org/www-project-zap/
+  final_url: https://www.zaproxy.org/
+  page_title: ZAP
+  http_status: 308
+  final_http_status: 200
+  type: tool
+  cost: free
+  difficulty: beginner
+  why_included: A free and open-source web proxy and scanner, offered as an alternative to Burp for local lab work.
+  prerequisites: []
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: picoctf-cylab
+  title: picoCTF practice (now CyLab Security Academy)
+  url: https://cylabacademy.org/
+  final_url: https://cylabacademy.org/
+  page_title: CyLab Security Academy
+  http_status: 200
+  final_http_status: 200
+  type: lab
+  cost: free
+  difficulty: beginner
+  why_included: Carnegie Mellon's beginner-friendly CTF practice platform, which the picoctf.org page says is now CyLab Security Academy.
+  prerequisites: []
+  est_hours: 40
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  notes: On 2026-11-25 https://picoctf.org/ served a notice titled 'picoCTF.org is now CyLab Security Academy' (HTTP 200, no HTTP redirect) linking to this site. The site described itself as always free.
+- id: portswigger-web-security-academy
+  title: PortSwigger Web Security Academy
+  url: https://portswigger.net/web-security
+  final_url: https://portswigger.net/web-security
+  page_title: 'Web Security Academy: Free Online Training from PortSwigger'
+  http_status: 200
+  final_http_status: 200
+  type: course
+  cost: free
+  difficulty: beginner
+  why_included: Free, structured web security lessons with deliberately vulnerable labs hosted by PortSwigger for legal practice.
+  prerequisites:
+  - HTTP basics
+  est_hours: 80
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: practical-malware-analysis
+  title: Practical Malware Analysis (Sikorski and Honig)
+  url: https://nostarch.com/malware
+  final_url: https://nostarch.com/malware
+  page_title: Practical Malware Analysis | No Starch Press
+  http_status: 200
+  final_http_status: 200
+  type: book
+  cost: paid
+  difficulty: advanced
+  why_included: A long-standing hands-on introduction to static and dynamic malware analysis; some tooling has aged, so pair it with current tool docs.
+  prerequisites:
+  - Basic C and Windows internals
+  est_hours: 60
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  book:
+    authors:
+    - Michael Sikorski
+    - Andrew Honig
+    edition: unknown
+    details_source: https://nostarch.com/malware
+  notes: The publisher page listed a February 2012 publication date.
+- id: pwning-juice-shop
+  title: Pwning OWASP Juice Shop (companion guide)
+  url: https://pwning.owasp-juice.shop/companion-guide/latest/
+  final_url: https://pwning.owasp-juice.shop/companion-guide/latest/
+  page_title: 'Untitled :: Pwning OWASP Juice Shop'
+  http_status: 200
+  final_http_status: 200
+  type: book
+  cost: free
+  difficulty: beginner
+  why_included: The official companion guide for Juice Shop, with setup help and explanations of the vulnerability categories it contains.
+  prerequisites:
+  - OWASP Juice Shop running locally
+  est_hours: 10
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  cost_notes: The page states the work is licensed under Creative Commons BY-NC-ND 4.0.
+  book:
+    authors:
+    - Bjoern Kimminich
+    edition: unknown
+    details_source: https://pwning.owasp-juice.shop/companion-guide/latest/
+  notes: 'The page title observed was ''Untitled :: Pwning OWASP Juice Shop''.'
+- id: python-tutorial
+  title: The Python Tutorial (python.org)
+  url: https://docs.python.org/3/tutorial/
+  final_url: https://docs.python.org/3/tutorial/
+  page_title: The Python Tutorial — Python 3.15.2 documentation
+  http_status: 200
+  final_http_status: 200
+  type: course
+  cost: free
+  difficulty: beginner
+  why_included: The official Python tutorial, which teaches the language features used throughout later phases.
+  prerequisites: []
+  est_hours: 20
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: remnux
+  title: REMnux
+  url: https://remnux.org/
+  final_url: https://remnux.org/
+  page_title: 'REMnux: A Linux Toolkit for Malware Analysts'
+  http_status: 200
+  final_http_status: 200
+  type: tool
+  cost: free
+  difficulty: intermediate
+  why_included: A free Linux toolkit for malware analysis that is meant to run inside an isolated lab VM.
+  prerequisites:
+  - Comfort running VMs
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: rfc9116-security-txt
+  title: 'RFC 9116: security.txt'
+  url: https://www.rfc-editor.org/rfc/rfc9116
+  final_url: https://www.rfc-editor.org/info/rfc9116/
+  page_title: 'RFC 9116: A File Format to Aid in Security Vulnerability Disclosure | RFC Editor'
+  http_status: 301
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: Defines the security.txt file that organizations use to publish how they want vulnerability reports to be sent.
+  prerequisites: []
+  est_hours: 1
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: serious-cryptography-2e
+  title: Serious Cryptography, 2nd Edition (Jean-Philippe Aumasson)
+  url: https://nostarch.com/seriouscrypto
+  final_url: https://nostarch.com/serious-cryptography-2nd-edition
+  page_title: Serious Cryptography, 2nd Edition | No Starch Press
+  http_status: 301
+  final_http_status: 200
+  type: book
+  cost: paid
+  difficulty: intermediate
+  why_included: A practical book on modern encryption that bridges introductory material and real-world protocol design.
+  prerequisites: []
+  est_hours: 30
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  book:
+    authors:
+    - Jean-Philippe Aumasson
+    edition: 2nd Edition (August 2024)
+    details_source: https://nostarch.com/serious-cryptography-2nd-edition
+- id: shellcheck
+  title: ShellCheck
+  url: https://www.shellcheck.net/
+  final_url: https://www.shellcheck.net/
+  page_title: ShellCheck – shell script analysis tool
+  http_status: 200
+  final_http_status: 200
+  type: tool
+  cost: free
+  difficulty: beginner
+  why_included: A static analyser for shell scripts that catches common Bash mistakes before they cause damage.
+  prerequisites: []
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: sigma
+  title: Sigma detection format
+  url: https://sigmahq.io/
+  final_url: https://sigmahq.io/
+  page_title: Sigma - SIEM Detection Format | The shareable detection format for security professionals.
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: intermediate
+  why_included: An open, vendor-neutral format for writing log-based detection rules that learners can publish as portfolio work.
+  prerequisites:
+  - Familiarity with log data
+  est_hours: 8
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: sysinternals
+  title: Sysinternals (Microsoft Learn)
+  url: https://learn.microsoft.com/en-us/sysinternals/
+  final_url: https://learn.microsoft.com/en-us/sysinternals/
+  page_title: Sysinternals - Sysinternals | Microsoft Learn
+  http_status: 200
+  final_http_status: 200
+  type: tool
+  cost: unknown
+  difficulty: intermediate
+  why_included: Microsoft's Windows troubleshooting utilities, commonly used to inspect processes and persistence on a test VM.
+  prerequisites:
+  - A Windows VM
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: tlcl-book
+  title: The Linux Command Line (William Shotts)
+  url: https://linuxcommand.org/tlcl.php
+  final_url: https://linuxcommand.org/tlcl.php
+  page_title: Linux Command Line Books by William Shotts
+  http_status: 200
+  final_http_status: 200
+  type: book
+  cost: free
+  difficulty: beginner
+  why_included: A thorough, freely licensed book covering the shell, common command-line programs, and shell scripting.
+  prerequisites: []
+  est_hours: 40
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  cost_notes: The page states the book is released under a Creative Commons BY-NC-ND licence.
+  book:
+    authors:
+    - William Shotts
+    edition: Seventh Internet Edition
+    details_source: https://linuxcommand.org/tlcl.php
+- id: tryhackme
+  title: TryHackMe
+  url: https://tryhackme.com/
+  final_url: https://tryhackme.com/
+  page_title: Learn Cyber Security | TryHackMe Cyber Training
+  http_status: 200
+  final_http_status: 200
+  type: lab
+  cost: unknown
+  difficulty: beginner
+  why_included: A legal, browser-based training platform with guided rooms that suit learners who want structured hands-on practice.
+  prerequisites: []
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+  cost_notes: The home page offered free sign-up and also linked to a pricing page; check the site for which content is free.
+- id: uk-computer-misuse-act
+  title: Computer Misuse Act 1990 (UK legislation)
+  url: https://www.legislation.gov.uk/ukpga/1990/18/contents
+  final_url: https://www.legislation.gov.uk/ukpga/1990/18/contents
+  page_title: Computer Misuse Act 1990
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: An official text of one country's computer-misuse law, useful for seeing how unauthorized access is defined in statute.
+  prerequisites: []
+  est_hours: 2
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: us-doj-cfaa-manual
+  title: 'US Justice Manual 9-48.000: Computer Fraud and Abuse Act'
+  url: https://www.justice.gov/jm/jm-9-48000-computer-fraud
+  final_url: https://www.justice.gov/jm/jm-9-48000-computer-fraud
+  page_title: Justice Manual | 9-48.000 - Computer Fraud and Abuse Act | United States Department of Justice
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: An official US government page on how federal prosecutors approach computer-fraud cases, including good-faith security research.
+  prerequisites: []
+  est_hours: 1
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: wireshark
+  title: Wireshark
+  url: https://www.wireshark.org/
+  final_url: https://www.wireshark.org/
+  page_title: Wireshark • Go Deep
+  http_status: 200
+  final_http_status: 200
+  type: tool
+  cost: free
+  difficulty: beginner
+  why_included: A free and open-source packet analyser used for networking practice and for network forensics in the defence phase.
+  prerequisites: []
+  est_hours: unknown
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: wireshark-users-guide
+  title: Wireshark User's Guide
+  url: https://www.wireshark.org/docs/wsug_html_chunked/
+  final_url: https://www.wireshark.org/docs/wsug_html_chunked/
+  page_title: Wireshark User’s Guide
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: beginner
+  why_included: The official guide to capturing and reading packets, used to see networking concepts in real traffic.
+  prerequisites: []
+  est_hours: 6
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: yara-docs
+  title: YARA documentation
+  url: https://yara.readthedocs.io/
+  final_url: https://yara.readthedocs.io/en/latest/
+  page_title: Welcome to YARA's documentation! — yara 4.5.0 documentation
+  http_status: 302
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: intermediate
+  why_included: Documentation for writing YARA rules that identify files by patterns, a core skill in malware triage.
+  prerequisites: []
+  est_hours: 6
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
+- id: zeek-docs
+  title: Zeek documentation
+  url: https://docs.zeek.org/en/master/
+  final_url: https://docs.zeek.org/en/master/
+  page_title: Zeek Documentation — Book of Zeek (9.1.0-dev.551)
+  http_status: 200
+  final_http_status: 200
+  type: reference
+  cost: free
+  difficulty: intermediate
+  why_included: Documentation for a network security monitor that turns traffic into logs defenders can search.
+  prerequisites:
+  - Networking fundamentals
+  est_hours: 10
+  verified_on: '2026-11-25'
+  verified_with: curl 8.23.0, following redirects, browser User-Agent
