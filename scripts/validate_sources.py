@@ -75,6 +75,16 @@ def schema_errors(data: object, schema: dict) -> list[str]:
     return errors
 
 
+def latest_calendar_date() -> dt.date:
+    """The latest calendar date anywhere on Earth right now (UTC+14).
+
+    Contributors record `verified_on` in their own time zone, while CI runs in UTC. Comparing
+    against the latest date in use anywhere avoids rejecting a date that is already "today"
+    for the person who checked the resource, while still rejecting genuinely future dates.
+    """
+    return (dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=14)).date()
+
+
 def check_date(value: object, label: str, today: dt.date) -> list[str]:
     if not isinstance(value, str):
         return []  # the schema reports the wrong type
@@ -156,7 +166,7 @@ def validate(
     today: dt.date | None = None,
 ) -> list[str]:
     """Return a list of human-readable problems; an empty list means valid."""
-    today = today or dt.date.today()
+    today = today or latest_calendar_date()
     errors: list[str] = []
 
     try:
