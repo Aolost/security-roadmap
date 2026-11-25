@@ -164,5 +164,6 @@ it, record what you observed, and run `make check`.
 
 ## Licence
 
-No licence has been chosen yet. Until one is added, normal copyright applies. See
-[RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md).
+- **Code** (`roadmap/`, `scripts/`, `tests/`): [MIT](LICENSE).
+- **Learning content** (`docs/`, `SOURCES.md`, `data/`): [CC BY 4.0](LICENSE-docs). You may share
+  and adapt it, including commercially, as long as you give credit.

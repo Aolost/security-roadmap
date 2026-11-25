@@ -4,7 +4,7 @@ No release or tag has been created yet. Work through this list before tagging `v
 
 ## Repository setup
 
-- [ ] Choose and add a licence (`LICENSE`), then update the Licence section of the README.
+- [x] Choose and add a licence (`LICENSE`), then update the Licence section of the README.
 - [ ] Create the GitHub repository and push the default branch `main`.
 - [ ] Enable issues so that readers can report corrections and the weekly link check can open its
       tracking issue.
